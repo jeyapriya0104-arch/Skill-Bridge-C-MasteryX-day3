@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int countDigit(int n, int d)
+{
+    if (n == 0)
+        return 0;
+
+    return (n % 10 == d) + countDigit(n / 10, d);
+}
+
+int main()
+{
+    int n, d;
+    scanf("%d %d", &n, &d);
+
+    if (n == 0)
+        printf("Count = %d", d == 0 ? 1 : 0);
+    else
+        printf("Count = %d", countDigit(n, d));
+
+    return 0;
+}
